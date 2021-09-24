@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" >
+
+    <title>Josserand</title>
+  </head>
+  <body>
+    <h1>Josserand</h1>
+
+    <div class="container-fluid mt-5 mb-5">
+      <div class="row g-2">
+        <div class="col" id="filters">
+          
+        </div>
+      </div>
+      <div class="row g-2 mt-2" id="dropdown-filters">
+        <div class="col">
+          <button class="btn btn-primary" id="showResultButton" type="button" onclick="onDisplayResultClicked()">
+            Afficher les résultats
+          </button>
+        </div>
+      </div>
+      <div class="row g-2 mt-2" id="resultsContainer">
+        <div class="col">
+          <div id="resultCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+
+            </div>
+            <div class="carousel-inner">
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#resultCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#resultCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="container-fluid">
+      <table id="table" class="table-striped"></table>
+    </div> -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.3/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="data.js"></script>
+    <script src="tire.js"></script>
+    <script src="filterManager.js"></script>
+    <script src="tireManager.js"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>
