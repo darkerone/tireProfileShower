@@ -50,7 +50,7 @@ class FilterManager {
 
     getCheckBox(category, value){
         let id = category + "_" + value;
-        let $form = $("<div class='form-check form-check-inline'></div>");
+        let $form = $("<div class='form-check form-check-inline filter'></div>");
         let $input = $("<input class='form-check-input' type='checkbox' id='input_"+ id +"' data-category='" + category + "' data-value='" + value + "' onchange='onCheckBoxChangeHandler(this)'>");
         $form.append($input);
         let $label = $("<label class='form-check-label' for='input_"+ id +"'>"+ value +"</label>");
