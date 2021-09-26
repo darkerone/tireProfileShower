@@ -64,16 +64,21 @@ function getCarouselItem(tire, isActive){
 
 function addItemToCarousel($carousel, tire, itemIndex){
   $carousel.find(".carousel-inner").append(getCarouselItem(tire, itemIndex == 0));
-  $carousel.find(".carousel-indicators").append($("<button type='button' data-bs-target='#resultCarousel' data-bs-slide-to='"+ tire.name +"' aria-label='"+ tire.name +"'></button>"));
+  let ariaCurrent = itemIndex == 0 ? "true": "false";
+  let isActiveClass = itemIndex == 0 ? "active" : "";
+  $carousel.find(".carousel-indicators").append($("<button type='button' class='"+ isActiveClass +"' data-bs-target='#resultCarousel' data-bs-slide-to='"+ itemIndex +"' aria-current="+ ariaCurrent +" aria-label='"+ tire.name +"'></button>"));
 }
 
 function onDisplayResultClicked(){
   let $resultCarousel = $("#resultCarousel");
 
+  $resultCarousel.carousel("pause").removeData();
   $resultCarousel.find(".carousel-inner").empty();
   $resultCarousel.find(".carousel-indicators").empty();
 
-  tireManager.selectedTires.forEach((tire, index) => {
+  tireManager.getSelectedTires().forEach((tire, index) => {
     addItemToCarousel($resultCarousel, tire, index);
   });
+  
+  $resultCarousel.carousel(0);
 }
