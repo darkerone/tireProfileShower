@@ -36,4 +36,10 @@ class TireManager {
     getSelectedTires(){
         return this.allTires.filter(x => x.isSelected);
     }
+
+    unselectAllTires(){
+        this.getSelectedTires().forEach(tire => {
+            tire.isSelected = false;
+        });
+    }
 }

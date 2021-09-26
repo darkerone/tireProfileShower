@@ -27,6 +27,11 @@ class FilterManager {
         }
     }
 
+    unselectAllFilters(){
+        this.selectedFilters.seasons = [];
+        this.selectedFilters.brands = [];
+    }
+
     getSeasonCheckboxList(){
         return this.getCheckboxList("seasons", filterManager.allSeasons, true);
     }

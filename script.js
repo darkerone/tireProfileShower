@@ -9,6 +9,7 @@ $(function () {
   $("#filters").append(filterManager.getSeasonCheckboxList());
   $("#filters").append(filterManager.getBrandCheckboxList());
 
+  displayFilters();
 });
 
 function onCheckBoxChangeHandler(elt){
@@ -24,12 +25,12 @@ function onCheckBoxChangeHandler(elt){
   }
 
   if(category != "tire"){
-    updateBrandTireCheckboxLists();
+    updateBrandsTireCheckboxLists();
   }
 }
 
 // Met à jour la liste des pneus d'une marque
-function updateBrandTireCheckboxLists(){
+function updateBrandsTireCheckboxLists(){
   // Pour toutes les marques
   filterManager.allBrands.forEach(brand => {
     // Si la marque est sélectionnée
@@ -81,4 +82,24 @@ function onDisplayResultClicked(){
   });
   
   $resultCarousel.carousel(0);
+
+  displayResults();
+}
+
+function onDisplayFilterClicked(){
+  location.href = location.href;
+}
+
+function displayResults(){
+  $("#resultCarousel").show();
+  $("#showFilterButton").show();
+  $("#filters").hide();
+  $("#showResultButton").hide();
+}
+
+function displayFilters(){
+  $("#resultCarousel").hide();
+  $("#showFilterButton").hide();
+  $("#filters").show();
+  $("#showResultButton").show();
 }
