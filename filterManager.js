@@ -39,7 +39,7 @@ class FilterManager {
         let isInlineClass = isInline ? "" : "row m-1";
         let $checkBoxList = $("");
         if(values != null && values.length > 0){
-            $checkBoxList = $("<div class='"+ isInlineClass +"'></div>");
+            $checkBoxList = $("<div class='"+ isInlineClass +" border'></div>");
             values.forEach(value => {
                 let $checkBox = this.getCheckBox(category, value);
                 $checkBoxList.append($checkBox);
