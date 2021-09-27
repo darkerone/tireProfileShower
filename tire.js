@@ -4,7 +4,7 @@ class Tire {
       this.brand = brand;
       this.name = name;
       this.image = image;
-      this.id = season + "_" + brand + "_" + name;
+      this.id = season + "_" + brand + "_" + name.replace(" ", "_");
       this.isSelected = false;
     }
 

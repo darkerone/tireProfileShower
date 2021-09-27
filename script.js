@@ -92,6 +92,8 @@ function onDisplayFilterClicked(){
 
 function displayResults(){
   $("#resultCarousel").show();
+  // Pour éviter que le carousel ne se redimensionne en hauteur à chaque photo, on lui impose une hauteur
+  $("#resultCarousel").height($(window).width()*4/3);
   $("#showFilterButton").show();
   $("#filters").hide();
   $("#showResultButton").hide();
